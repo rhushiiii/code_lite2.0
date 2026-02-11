@@ -29,6 +29,8 @@ def _apply_user_table_migrations() -> None:
             connection.execute(text("ALTER TABLE users ADD COLUMN github_token_encrypted VARCHAR(1024)"))
         if "github_username" not in columns:
             connection.execute(text("ALTER TABLE users ADD COLUMN github_username VARCHAR(255)"))
+        if "github_id" not in columns:
+            connection.execute(text("ALTER TABLE users ADD COLUMN github_id VARCHAR(100)"))
 
 
 def init_db() -> None:

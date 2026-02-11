@@ -32,6 +32,23 @@ function SignupPage() {
     }
   };
 
+  const continueWithGitHub = async () => {
+    setError("");
+    setLoading(true);
+    try {
+      const { data } = await api.get("/auth/github/login-url");
+      if (data?.url) {
+        window.location.href = data.url;
+        return;
+      }
+      setError("Unable to start GitHub signup.");
+    } catch (apiError) {
+      setError(apiError?.response?.data?.detail || "Unable to start GitHub signup.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-6xl items-center justify-center px-6 py-10">
       <Card className="w-full max-w-md border-violet-500/20">
@@ -68,6 +85,10 @@ function SignupPage() {
             ) : (
               "Create Account"
             )}
+          </Button>
+
+          <Button type="button" variant="secondary" disabled={loading} className="w-full" onClick={continueWithGitHub}>
+            Continue with GitHub
           </Button>
         </form>
 

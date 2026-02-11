@@ -197,6 +197,7 @@ VITE_PROXY_TARGET=http://localhost:8000
 - `POST /auth/signup`
 - `POST /auth/login`
 - `GET /auth/me` (protected)
+- `GET /auth/github/login-url`
 
 ### Reviews
 
@@ -209,7 +210,7 @@ VITE_PROXY_TARGET=http://localhost:8000
 - `GET /github/status` (protected)
 - `GET /github/repos-pending-prs` (protected)
 - `POST /github/disconnect` (protected)
-- `GET /github/callback` (GitHub redirect target)
+- `GET /github/callback` (GitHub redirect target for both connect + GitHub sign-in)
 
 ## Example cURL Tests
 

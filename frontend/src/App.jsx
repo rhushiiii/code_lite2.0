@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./context/AuthContext";
 import DashboardPage from "./pages/DashboardPage";
+import GitHubAuthSuccessPage from "./pages/GitHubAuthSuccessPage";
 import LoginPage from "./pages/LoginPage";
 import ReviewPage from "./pages/ReviewPage";
 import SignupPage from "./pages/SignupPage";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage />} />
         <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <SignupPage />} />
+        <Route path="/auth/github/success" element={<GitHubAuthSuccessPage />} />
         <Route
           path="/dashboard"
           element={

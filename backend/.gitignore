@@ -99,3 +99,5 @@ ipython_config.py
 # poetry.lock
 
 #
+
+./app/models/__pycache__/
