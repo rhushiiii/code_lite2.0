@@ -5,7 +5,11 @@ Production-ready MVP with a **separate FastAPI backend** and **React + Vite + Ta
 - Auth with JWT + bcrypt password hashing
 - Protected PR review workflow
 - GitHub PR diff fetch + AI analysis using **Ollama (free local LLM)**
-- Structured issue output with severity levels
+- Structured issue output with severit
+
+
+
+y levels
 - Review history dashboard
 - SQLite local fallback, PostgreSQL-ready
 - Rate limiting middleware with stricter `/review` limit
